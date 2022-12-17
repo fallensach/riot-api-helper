@@ -5,9 +5,14 @@ This file includes all configuration required to run the api
 # Enter your api key here
 API_KEY = "RGAPI-49031b6a-6db3-42a8-962a-928abeb340ea"
 
-regions = {
+league_regions = {
     "EUNE" : "eun1",
     "EUW" : "euw1"
+}
+
+riot_regions = {
+    "eu" : "europe",
+    "na" : "america"
 }
 
 headers = {
