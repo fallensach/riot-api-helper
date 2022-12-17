@@ -95,8 +95,6 @@ class RiotGamesApi():
     def stats_queue(self):
         count = 0
         for match in self.match_ids:
-            if count == 20:
-                break
 
             match_data = self.match_info(match)
             participants = match_data["metadata"]["participants"]
@@ -109,3 +107,12 @@ class RiotGamesApi():
             win = match_data["info"]["participants"][id]["win"]
             print(f"{match}: Win = {win}")
             count += 1
+
+    def match_timeline(self, match_id):
+        """
+        Uses riot version
+        :param match_id:
+        :return:
+        """
+        timeline_data = requests.get(f"https://{self.riot_region}.api.riotgames.com/lol/match/{RIOT_V}/matches/{match_id}/timeline?", headers=headers).json()
+        return timeline_data
